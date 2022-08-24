@@ -5,14 +5,19 @@ function percentage(marks, total) {
   return (marks * 100) / total;
 }
 
-//function expression
+let percentage = function percenatge(marks, total) {
+  return (marks * 100) / total;
+};
+
 let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
-//arrow function
+
 let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
+
+let percentage = (marks, total) => (marks * 100) / total;
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -57,7 +62,7 @@ let sum = (a, b) => a + b;
 
 4. Why is a function call an expression in JavaScript?
 
-- since functions are objects in javascript, and objects can be stored in a variable, so executing a function is like executing an object hence it is an expression in javascript.
+- since function call always returns a value whether truthy or falsy but it return a value so hence it is an expression in javascript.
 
 5. Write VALID and INVALID next to each example below with the reason.
 
@@ -66,17 +71,17 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); //Valid
-five = add; // valid
-five = five(10, 11); // valid
+let five = add(2, 3); //Valid since add function will be called and return a value 5
+five = add; // valid since we are assigning a function definition to a variable five.
+five = five(10, 11); // valid since five is an function expression and initially it will be executed and 21 will be assigned to five variable.
 five = function () {
   return "Hello";
-}; // valid
+}; // valid here five is a varible and function definition is assigned to it so it is valid.
 ```
 
 6. What is the difference between function definition and function call? Explain with an example.
 
-- Function definition defines the series of step of a function. Function call s the execution of that series of function.
+- Function definition defines the series of step of a function. Function call is the execution of that series of function.
   eg:
 
 ```js
@@ -89,7 +94,7 @@ isEven(4); //function call
 
 7. What is the similarities between function definition and function call?
 
-- both are expression in javascript and can be stored in a variable.
+- both are expression in javascript
 
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -118,4 +123,4 @@ function filterEven(arr, fn) {
 
 10. Explain what is callback function. Why you can pass a function inside a function?
 
-- callback function is a function which is passed as an argument to another function. In javascript since fucntions are objects, so we can pass them as argument for any other function.
+- callback function is a function which is passed as an argument to another function. In javascript since functions are expressions , so we can pass them as argument for any other function.
