@@ -4,7 +4,7 @@
 
 2. Where the JavaScript code gets executed?
 
-- Javascript code gets executed in Global Execution context.
+- Javascript code gets executed in JavaScript Engine
 
 3. What does context means in Global Execution Context?
 
