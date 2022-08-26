@@ -5,10 +5,10 @@ Create a execution context diagram of the following code on your notebook. Take 
 1.
 
 ```js
-var species = 'human';
+var species = "human";
 
 function change() {
-  var species = 'vampire';
+  var species = "vampire";
   console.log(species);
 }
 
@@ -19,15 +19,17 @@ console.log(species); // 2
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/Screenshot%20from%202022-08-26%2022-26-47.png)
 
 - Create the execution context diagram
 - What will be the value of species on 1 and 2
+- 1. Human
+- 2. Human
 
 2.
 
 ```js
-var topLevelVar = 'This is global scope!';
+var topLevelVar = "This is global scope!";
 
 function topLevelFn() {
   var localVar = "This is local to topLevelFn's scope";
@@ -47,22 +49,24 @@ topLevelFn();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/Screenshot%20from%202022-08-26%2023-06-53.png)
 
 - Create the execution context diagram
 - What will be the value of 1 and 2
+- 1. "This is local to topLevelFn's scope"
+- 2. "This is global scope!"
 
 3.
 
 ```js
-var one = 'One';
-var two = 'Two';
+var one = "One";
+var two = "Two";
 
 function main() {
-  var three = 'Three';
+  var three = "Three";
 
   function inner() {
-    var four = 'Four';
+    var four = "Four";
 
     console.log(one); // 1
     console.log(two); // 2
@@ -78,7 +82,10 @@ console.log(one, two, three, four); // 5
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/Screenshot%20from%202022-08-26%2023-26-09.png)
 
 - Create the execution context diagram
 - What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
+- error: Uncaught ReferenceError: four is not defined
+  at main (<anonymous>:14:15)
+  at <anonymous>:18:1
