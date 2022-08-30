@@ -62,7 +62,7 @@ if (true) {
 console.log(username); // SyntaxError: Identifier 'username' has already been declared
 ```
 
-In above code we are looking for the variable named `username`. Initially the variable `username` is declared using let with value "John" but then it is redeclared to be "Arya" but since variable declaration with let can't be redeclared it will throw an error.
+In above code we are looking for the variable named `username`. Initially the variable `username` is declared using let in global scope with value "John" but then it is redeclared to be "Arya" using var which is function scope and since it is insisde blocked it will be declared in global scope but since variable declaration with let can't be redeclared in same scope it will throw an error.
 The above code will throw an error `SyntaxError: Identifier 'username' has already been declared`
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -72,11 +72,10 @@ let username = "John";
 if (true) {
   let username = "Arya";
 }
-console.log(username); // SyntaxError: Identifier 'username' has already been declared
+console.log(username); // John
 ```
 
-In above code we are looking for the variable named `username`. Initially the variable `username` is declared using let with value "John" but then it is redeclared to be "Arya" but since variable declaration with let can't be redeclared it will throw an error.
-The above code will throw an error `SyntaxError: Identifier 'username' has already been declared`
+In above code we are looking for the variable named `username`. Initially the variable `username` is declared using let in global scope with value "John" and `username` variable is again declared to be "Arya" using let so it will create a block scoped and the console.log is in global scope so it will check in global execution context's memory and output will be `John`
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
