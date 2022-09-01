@@ -15,6 +15,8 @@ let hundred = square(10);
 console.log(hundred);
 ```
 
+![](./img/Untitled-2022-08-25-2034.png)
+
 Create the execution context diagram of the following code line by line.
 
 ```js
@@ -26,6 +28,8 @@ var five = addFive(0);
 var ten = addFive(5);
 console.log(five, ten);
 ```
+
+![](./img/Untitled-2022-08-25-2034_2.png)
 
 Create the execution context diagram of the following code line by line.
 
