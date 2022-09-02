@@ -24,12 +24,10 @@ forEach(["Sam", "Jon", "Arya"], (name, i, arr) =>
 
 ```js
 function map(arr, cb) {
-  let final = [];
-  arr.reduce((acc, elm) => {
-    acc = cb(elm);
-    final.push(acc);
-  }, "");
-  return final;
+  return arr.reduce((acc, elm) => {
+    acc.push(cb(elm));
+    return acc;
+  }, []);
 }
 
 map(["Sam", "Jon", "Arya"], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
@@ -43,14 +41,12 @@ map(["Sam", "Jon", "Arya"], (name) => name + name); // ['SamSam', 'JonJon', 'Ary
 
 ```js
 function filter(arr, cb) {
-  let final = [];
-  arr.reduce((acc, elm) => {
+  return arr.reduce((acc, elm) => {
     if (cb(elm)) {
-      acc = elm;
-      final.push(acc);
+      acc.push(elm);
     }
-  }, "");
-  return final;
+    return acc;
+  }, []);
 }
 filter(["Sam", "Jon", "Arya"], (name) => name.startsWith("S")); // ['Sam']
 ```
