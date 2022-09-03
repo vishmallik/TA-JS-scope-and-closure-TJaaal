@@ -15,7 +15,9 @@ function outer(string) {
 
 ```js
 function delay(cb, ms) {
-  return setTimeout(cb, ms);
+  return function () {
+    setTimeout(cb, ms);
+  };
 }
 ```
 
@@ -43,8 +45,8 @@ lastNameLee("Lynne"); //logs 'Lynne Lee'
 4. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 
 ```js
-let story = "";
 function storyWriter() {
+  let story = "";
   return {
     addWords: function (str) {
       if (story) {
@@ -81,8 +83,7 @@ When `forEach` function is called it returns another function. When the returned
 function forEach(arr) {
   let index = 0;
   function nextEle() {
-    index++;
-    return arr[index - 1];
+    return arr[index++];
   }
   return nextEle;
 }
@@ -169,8 +170,13 @@ arya.setLastName("Lannister"); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag() {
-  // your code goes here
+function createTag(elementName) {
+  function tag(children) {
+    let elm = document.createElement(elementName);
+    elm.innerText = children;
+    return elm;
+  }
+  return tag;
 }
 
 let bold = createTag("b");
