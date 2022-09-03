@@ -152,7 +152,7 @@ function sayHello() {
 }
 sayHello();
 
-console.log(name); //"" since here console.log canr access name variable inside sayHello function but by default name variable is defined in a windows as "" so window.name is predefined.
+console.log(name); //Reference error: name is not defined since let creates block scope
 ```
 
 13. Guess the output of the code below with a reason.
@@ -161,7 +161,7 @@ console.log(name); //"" since here console.log canr access name variable inside 
 if (true) {
   var name = "Arya Stark";
 }
-console.log(name); //"Arya Stark" since var is function scoped and not blocked scope so name = "Arya Stark" will be defined in Global Scope. So window.name = "Arya Stark"
+console.log(name); //"Arya Stark" since var is function scoped and not blocked scope so name = "Arya Stark" will be defined in Global Scope.
 ```
 
 14. Guess the output of the code below with a reason.
@@ -170,7 +170,7 @@ console.log(name); //"Arya Stark" since var is function scoped and not blocked s
 if (true) {
   let name = "Arya Stark";
 }
-console.log(name); //"" Here also console.log cant access name variable inside if block sine let is blocked scope. But name is predefined in a window to be "". so output will be ""
+console.log(name); //Reference error: name is not defined since let creates block scope
 ```
 
 15. Guess the output of the code below with a reason.
