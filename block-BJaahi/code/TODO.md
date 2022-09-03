@@ -207,6 +207,15 @@ function sayHi(name) {
 
 // Execution Phase
 sayHi();
+//FEC Declaration phase
+var name = undefined;
+let age;
+
+//FEC Execution phase
+console.log(name);
+console.log(age);
+name = "Lydia";
+age = 21;
 ```
 
 7.
@@ -225,7 +234,7 @@ function sayHi(name) {
 
 ```js
 // Declaration Phase
-unction sayHi(name) {
+function sayHi(name) {
   console.log(name);
   console.log(age);
   var name = "Lydia";
@@ -234,6 +243,15 @@ unction sayHi(name) {
 
 // Execution Phase
 sayHi();
+//FEC Declaration phase
+var name = undefined;
+let age;
+
+//FEC Execution phase
+console.log(name);
+console.log(age);
+name = "Lydia";
+age = 21;
 ```
 
 8.
