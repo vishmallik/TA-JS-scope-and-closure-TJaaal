@@ -11,10 +11,8 @@
 
 ```js
 function loop(start_value, test, update, body) {
-  let cv = start_value;
-  update(start_value);
-  if (test(cv)) {
-    return body(cv);
+  for (let i = start_value; test(i); i = update(i)) {
+    body(i);
   }
 }
 
@@ -52,7 +50,14 @@ reduce(nums, add, 0); //-> 8
 3. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs.
 
 ```js
-function intersection(arrays) {}
+function intersection(...arrays) {
+  let first = arrays[0];
+  for (let i = 1; i < arrays.length; i++) {
+    let second = arrays[i];
+    first = first.filter((elm) => second.includes(elm));
+  }
+  return first;
+}
 
 // Test
 console.log(
@@ -63,15 +68,14 @@ console.log(
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {
-  let arr = [];
+function union(...arrays) {
   let final = [];
-  arr.push(arrays);
-  arr.flat(Infinity);
-  for (elm in arr) {
-    if (!final.includes(elm)) {
-      final.push(elm);
-    }
+  for (let i = 0; i < arrays.length; i++) {
+    arrays[i].forEach((elm) => {
+      if (!final.includes(elm)) {
+        final.push(elm);
+      }
+    });
   }
   return final;
 }
