@@ -69,7 +69,8 @@ function createCache(cb, str) {
     if (n === str) {
       return obj;
     } else {
-      return (obj[n] = cb(n));
+      obj[n] = cb(n);
+      return cb(n);
     }
   };
 }
@@ -99,7 +100,8 @@ function createCache(cb, str) {
       if (obj[n]) {
         return obj[n];
       } else {
-        return (obj[n] = cb(n));
+        obj[n] = cb(n);
+        return cb(n);
       }
     }
   };
