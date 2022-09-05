@@ -22,13 +22,11 @@ console.log(
 ```js
 function union(...arrays) {
   return arrays.reduce((arr1, arr2) => {
-    return arr1.reduce((acc, elm) => {
-      // console.log(acc);
-      if (!arr2.includes(elm)) {
-        acc.push(elm);
+    return arr2.reduce((pv, cv) => {
+      if (!pv.includes(cv)) {
+        pv.push(cv);
       }
-      // console.log(acc);
-      return acc;
+      return pv;
     }, arr1);
   });
 }
